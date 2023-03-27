@@ -3,20 +3,20 @@ package main
 import (
 	"flag"
 	"fmt"
-	"open_im_sdk/open_im_sdk"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/open_im_sdk"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
 
 	//	_ "net/http/pprof"
 	"net/http"
 	_ "net/http/pprof"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 
-	//"open_im_sdk/open_im_sdk"
+	//"github.com/soloohu/open_im_sdk/open_im_sdk"
 
 	log1 "log"
-	"open_im_sdk/ws_wrapper/utils"
-	"open_im_sdk/ws_wrapper/ws_local_server"
+	"github.com/soloohu/open_im_sdk/ws_wrapper/utils"
+	"github.com/soloohu/open_im_sdk/ws_wrapper/ws_local_server"
 	"runtime"
 	"sync"
 )

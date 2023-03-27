@@ -4,12 +4,12 @@ import (
 	"errors"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/websocket"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 	"time"
 )
 

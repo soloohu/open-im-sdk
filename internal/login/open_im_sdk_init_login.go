@@ -1,7 +1,7 @@
 package login
 
 import (
-	"open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
 	"sync"
 )
 

@@ -3,20 +3,20 @@ package user
 import (
 	"fmt"
 	"github.com/google/go-cmp/cmp"
-	comm "open_im_sdk/internal/common"
-	"open_im_sdk/pkg/db/model_struct"
+	comm "github.com/soloohu/open_im_sdk/internal/common"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
 
 	//"github.com/mitchellh/mapstructure"
-	ws "open_im_sdk/internal/interaction"
-	"open_im_sdk/open_im_sdk_callback"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db"
-	"open_im_sdk/pkg/log"
-	sdk "open_im_sdk/pkg/sdk_params_callback"
-	api "open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
-	"open_im_sdk/sdk_struct"
+	ws "github.com/soloohu/open_im_sdk/internal/interaction"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	sdk "github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+	api "github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 )
 
 type User struct {

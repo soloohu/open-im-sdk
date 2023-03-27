@@ -1,4 +1,4 @@
-module open_im_sdk
+module github.com/soloohu/open_im_sdk
 
 go 1.15
 

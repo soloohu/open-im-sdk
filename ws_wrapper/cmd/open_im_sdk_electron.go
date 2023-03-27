@@ -3,16 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
-	"open_im_sdk/open_im_sdk"
+	"github.com/soloohu/open_im_sdk/open_im_sdk"
 
 	//	_ "net/http/pprof"
 	_ "net/http/pprof"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 
-	//"open_im_sdk/open_im_sdk"
+	//"github.com/soloohu/open_im_sdk/open_im_sdk"
 
-	"open_im_sdk/ws_wrapper/utils"
-	"open_im_sdk/ws_wrapper/ws_local_server"
+	"github.com/soloohu/open_im_sdk/ws_wrapper/utils"
+	"github.com/soloohu/open_im_sdk/ws_wrapper/ws_local_server"
 	"runtime"
 	"sync"
 )

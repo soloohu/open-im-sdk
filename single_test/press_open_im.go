@@ -2,9 +2,9 @@ package main
 
 import (
 	"flag"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/test"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/test"
 )
 
 func main() {

@@ -8,7 +8,7 @@ import (
 
 	"io/ioutil"
 	"net/http"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 	"time"
 )
 

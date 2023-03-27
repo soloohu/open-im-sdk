@@ -2,19 +2,19 @@ package full
 
 import (
 	"errors"
-	"open_im_sdk/internal/cache"
-	"open_im_sdk/internal/friend"
-	"open_im_sdk/internal/group"
-	"open_im_sdk/internal/super_group"
-	"open_im_sdk/internal/user"
-	"open_im_sdk/open_im_sdk_callback"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db"
-	"open_im_sdk/pkg/db/model_struct"
-	sdk "open_im_sdk/pkg/sdk_params_callback"
-	api "open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/internal/cache"
+	"github.com/soloohu/open_im_sdk/internal/friend"
+	"github.com/soloohu/open_im_sdk/internal/group"
+	"github.com/soloohu/open_im_sdk/internal/super_group"
+	"github.com/soloohu/open_im_sdk/internal/user"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
+	sdk "github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+	api "github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 type Full struct {

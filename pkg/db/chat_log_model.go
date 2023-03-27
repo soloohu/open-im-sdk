@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 	"gorm.io/gorm"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db/model_struct"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/utils"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 )
 
 func (d *DataBase) BatchInsertMessageList(MessageList []*model_struct.LocalChatLog) error {

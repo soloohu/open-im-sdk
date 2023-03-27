@@ -2,10 +2,10 @@ package test
 
 import (
 	"fmt"
-	"open_im_sdk/open_im_sdk"
-	"open_im_sdk/pkg/log"
-	api "open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/open_im_sdk"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	api "github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 type testSignalingListener struct {

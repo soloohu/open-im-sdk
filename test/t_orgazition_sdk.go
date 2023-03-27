@@ -3,10 +3,10 @@ package test
 import (
 	"encoding/json"
 	"fmt"
-	"open_im_sdk/open_im_sdk"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/sdk_params_callback"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/open_im_sdk"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 type orgBaseCallback struct {

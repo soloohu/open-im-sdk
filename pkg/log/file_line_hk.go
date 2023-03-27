@@ -8,7 +8,7 @@ package log
 
 import (
 	"github.com/sirupsen/logrus"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 	"runtime"
 	"strings"
 )

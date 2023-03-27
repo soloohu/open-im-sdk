@@ -1,8 +1,8 @@
 package sdk_params_callback
 
 import (
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db"
 )
 
 type WorkMomentsNotificationCallback string

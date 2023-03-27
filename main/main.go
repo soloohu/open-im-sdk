@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/test"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/test"
 	"time"
 )
 

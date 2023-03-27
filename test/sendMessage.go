@@ -1,14 +1,14 @@
 package test
 
 import (
-	"open_im_sdk/internal/interaction"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
-	//	"open_im_sdk/internal/interaction"
-	"open_im_sdk/internal/login"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/internal/interaction"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	//	"github.com/soloohu/open_im_sdk/internal/interaction"
+	"github.com/soloohu/open_im_sdk/internal/login"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 )
 
 func init() {

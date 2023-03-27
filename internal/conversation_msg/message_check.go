@@ -1,14 +1,14 @@
 package conversation_msg
 
-import "open_im_sdk/pkg/db/model_struct"
+import "github.com/soloohu/open_im_sdk/pkg/db/model_struct"
 
 //
 //import (
-//	"open_im_sdk/pkg/constant"
-//	"open_im_sdk/pkg/db/model_struct"
-//	"open_im_sdk/pkg/log"
-//	sdk "open_im_sdk/pkg/sdk_params_callback"
-//	"open_im_sdk/pkg/utils"
+//	"github.com/soloohu/open_im_sdk/pkg/constant"
+//	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
+//	"github.com/soloohu/open_im_sdk/pkg/log"
+//	sdk "github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+//	"github.com/soloohu/open_im_sdk/pkg/utils"
 //)
 //
 //func (c *Conversation) messageBlocksInternalContinuityCheck(sourceID string, seqList []uint32, notStartTime, isReverse bool, count, sessionType int, startTime int64, list *[]*model_struct.LocalChatLog, messageListCallback *sdk.GetAdvancedHistoryMessageListCallback, operationID string)  {

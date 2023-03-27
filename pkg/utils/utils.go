@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
-	"open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
 
 	"github.com/pkg/errors"
 	"reflect"

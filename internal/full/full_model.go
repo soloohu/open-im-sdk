@@ -1,7 +1,7 @@
 package full
 
 import (
-	"open_im_sdk/pkg/db/model_struct"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
 )
 
 func (u *Full) GetGroupInfoByGroupID(groupID string) (*model_struct.LocalGroup, error) {

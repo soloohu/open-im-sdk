@@ -1,7 +1,7 @@
 package server_api_params
 
 import (
-	"open_im_sdk/pkg/db/model_struct"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
 )
 
 type ApiUserInfo struct {

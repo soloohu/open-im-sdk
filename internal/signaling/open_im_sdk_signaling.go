@@ -1,11 +1,11 @@
 package signaling
 
 import (
-	"open_im_sdk/open_im_sdk_callback"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/log"
-	api "open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	api "github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 func (s *LiveSignaling) SetDefaultReq(req *api.InvitationInfo) {

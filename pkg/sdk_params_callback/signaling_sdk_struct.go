@@ -1,6 +1,6 @@
 package sdk_params_callback
 
-import "open_im_sdk/pkg/server_api_params"
+import "github.com/soloohu/open_im_sdk/pkg/server_api_params"
 
 type InviteCallback *server_api_params.SignalInviteReply
 

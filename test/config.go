@@ -1,7 +1,7 @@
 package test
 
 import (
-	"open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
 	"sync"
 )
 

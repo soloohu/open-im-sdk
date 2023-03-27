@@ -1,8 +1,8 @@
 package sdk_params_callback
 
 import (
-	"open_im_sdk/pkg/db/model_struct"
-	api "open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
+	api "github.com/soloohu/open_im_sdk/pkg/server_api_params"
 )
 
 ////////////////////////////////friend////////////////////////////////////

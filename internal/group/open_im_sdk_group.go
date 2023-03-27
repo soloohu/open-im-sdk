@@ -1,13 +1,13 @@
 package group
 
 import (
-	"open_im_sdk/open_im_sdk_callback"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/sdk_params_callback"
-	api "open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+	api "github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 func (g *Group) SetGroupListener(callback open_im_sdk_callback.OnGroupListener) {

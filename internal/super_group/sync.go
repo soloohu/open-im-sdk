@@ -1,9 +1,9 @@
 package super_group
 
 import (
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 //func (s *SuperGroup) SyncJoinedGroupList(operationID string) {

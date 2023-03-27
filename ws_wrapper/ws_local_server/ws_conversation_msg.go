@@ -2,18 +2,18 @@ package ws_local_server
 
 import (
 	"encoding/json"
-	"open_im_sdk/open_im_sdk"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/utils"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/open_im_sdk"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 )
 
 //
 //import (
 //	"encoding/json"
-//	"open_im_sdk/open_im_sdk"
+//	"github.com/soloohu/open_im_sdk/open_im_sdk"
 //)
 //
 func (wsRouter *WsFuncRouter) CreateTextMessage(input string, operationID string) {

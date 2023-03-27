@@ -1,13 +1,13 @@
 package common
 
 import (
-	"open_im_sdk/pkg/db/model_struct"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/jinzhu/copier"
 
-	//log2 "open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/server_api_params"
+	//log2 "github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
 )
 
 type diff interface {

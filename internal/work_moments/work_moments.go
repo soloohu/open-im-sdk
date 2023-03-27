@@ -1,13 +1,13 @@
 package workMoments
 
 import (
-	ws "open_im_sdk/internal/interaction"
-	"open_im_sdk/open_im_sdk_callback"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/db"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/sdk_params_callback"
-	"open_im_sdk/pkg/utils"
+	ws "github.com/soloohu/open_im_sdk/internal/interaction"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/db"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 )
 
 type WorkMoments struct {

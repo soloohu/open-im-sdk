@@ -2,12 +2,12 @@ package interaction
 
 import (
 	"github.com/golang/protobuf/proto"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 	"sync"
 )
 

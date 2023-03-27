@@ -3,12 +3,12 @@ package test
 import (
 	"encoding/json"
 	"net/url"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
-	"open_im_sdk/sdk_struct"
-	"open_im_sdk/ws_wrapper/test/client"
-	"open_im_sdk/ws_wrapper/ws_local_server"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/ws_wrapper/test/client"
+	"github.com/soloohu/open_im_sdk/ws_wrapper/ws_local_server"
 	"sync"
 	"time"
 

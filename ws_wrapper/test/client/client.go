@@ -2,9 +2,9 @@ package client
 
 import (
 	"encoding/json"
-	"open_im_sdk/pkg/network"
-	"open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/pkg/network"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 	"sync"
 
 	"github.com/gorilla/websocket"

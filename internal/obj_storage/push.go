@@ -1,13 +1,13 @@
 package obj_storage
 
 import (
-	ws "open_im_sdk/internal/interaction"
-	"open_im_sdk/open_im_sdk_callback"
+	ws "github.com/soloohu/open_im_sdk/internal/interaction"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
 
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/sdk_params_callback"
-	"open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/sdk_params_callback"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
 )
 
 type Push struct {

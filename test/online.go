@@ -1,9 +1,9 @@
 package test
 
 import (
-	"open_im_sdk/internal/interaction"
-	"open_im_sdk/pkg/common"
-	"open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/internal/interaction"
+	"github.com/soloohu/open_im_sdk/pkg/common"
+	"github.com/soloohu/open_im_sdk/pkg/log"
 	"sync"
 	"time"
 )

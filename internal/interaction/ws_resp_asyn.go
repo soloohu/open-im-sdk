@@ -2,8 +2,8 @@ package interaction
 
 import (
 	"errors"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 	"sync"
 	"time"
 )

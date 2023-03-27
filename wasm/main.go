@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"open_im_sdk/open_im_sdk"
-	"open_im_sdk/pkg/utils"
-	"open_im_sdk/sdk_struct"
-	"open_im_sdk/test"
+	"github.com/soloohu/open_im_sdk/open_im_sdk"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/test"
 	"syscall/js"
 )
 

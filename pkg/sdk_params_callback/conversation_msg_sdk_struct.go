@@ -1,9 +1,9 @@
 package sdk_params_callback
 
 import (
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db/model_struct"
-	"open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
+	"github.com/soloohu/open_im_sdk/sdk_struct"
 )
 
 //type GetAllConversationListParam null

@@ -1,7 +1,7 @@
 package open_im_sdk
 
 import (
-	"open_im_sdk/internal/login"
+	"github.com/soloohu/open_im_sdk/internal/login"
 	"sync"
 )
 

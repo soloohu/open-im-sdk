@@ -2,9 +2,9 @@ package db
 
 import (
 	"errors"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/db/model_struct"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/db/model_struct"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 
 	"gorm.io/gorm"
 )

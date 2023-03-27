@@ -5,11 +5,11 @@ import (
 	"errors"
 	"github.com/go-playground/validator/v10"
 	"github.com/mitchellh/mapstructure"
-	"open_im_sdk/open_im_sdk_callback"
-	"open_im_sdk/pkg/constant"
-	"open_im_sdk/pkg/log"
-	"open_im_sdk/pkg/server_api_params"
-	"open_im_sdk/pkg/utils"
+	"github.com/soloohu/open_im_sdk/open_im_sdk_callback"
+	"github.com/soloohu/open_im_sdk/pkg/constant"
+	"github.com/soloohu/open_im_sdk/pkg/log"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
+	"github.com/soloohu/open_im_sdk/pkg/utils"
 	"runtime"
 )
 
