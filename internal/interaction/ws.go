@@ -225,6 +225,8 @@ func (w *Ws) ReadData() {
 			}
 			continue
 		}
+
+		log.Warn(operationID, fmt.Sprintf("ws Recv message. msgType:%d, message:%+v", msgType, message))
 		if msgType == websocket.CloseMessage {
 			log.Error(operationID, "type websocket.CloseMessage, ReConn")
 			err, isNeedReConnect := w.reConnSleep(operationID, 1)
@@ -236,6 +238,7 @@ func (w *Ws) ReadData() {
 		} else if msgType == websocket.TextMessage {
 			log.Warn(operationID, "type websocket.TextMessage")
 		} else if msgType == websocket.BinaryMessage {
+			log.Warn(operationID, "type websocket.BinaryMessage")
 			go w.doWsMsg(message)
 		} else {
 			log.Warn(operationID, "recv other type ", msgType)
@@ -261,6 +264,7 @@ func (w *Ws) doWsMsg(message []byte) {
 		}
 	case constant.WSPushMsg:
 		if constant.OnlyForTest == 1 {
+			log.Debug(wsResp.OperationID, "ws recv push msg, code: ", wsResp.ErrCode, wsResp.ReqIdentifier)
 			return
 		}
 		if err = w.doWSPushMsg(*wsResp); err != nil {
