@@ -1,6 +1,7 @@
 package interaction
 
 import (
+	"fmt"
 	"errors"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/websocket"
