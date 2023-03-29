@@ -352,6 +352,6 @@ const (
 const SplitGetGroupMemberNum = 1000
 const UseHashGroupMemberNum = 1000
 
-var OnlyForTest = 0
+var OnlyForTest = 1
 
 var KEY = "openIMtest123456789"
