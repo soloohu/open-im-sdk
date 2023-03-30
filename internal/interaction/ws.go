@@ -1,7 +1,6 @@
 package interaction
 
 import (
-	"fmt"
 	"errors"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/websocket"
@@ -227,7 +226,6 @@ func (w *Ws) ReadData() {
 			continue
 		}
 
-		log.Warn(operationID, fmt.Sprintf("ws Recv message. msgType:%d, message:%+v", msgType, message))
 		if msgType == websocket.CloseMessage {
 			log.Error(operationID, "type websocket.CloseMessage, ReConn")
 			err, isNeedReConnect := w.reConnSleep(operationID, 1)
@@ -266,15 +264,15 @@ func (w *Ws) doWsMsg(message []byte) {
 	case constant.WSPushMsg:
 		if constant.OnlyForTest == 1 {
 			log.Debug(wsResp.OperationID, "ws recv push msg, code: ", wsResp.ErrCode, wsResp.ReqIdentifier)
-			return
+			if err = w.doWSPushMsgForTest(*wsResp); err != nil {
+				log.Error(wsResp.OperationID, "doWSPushMsgForTest failed ", err.Error())
+			}
+			//return
+		} else {
+			if err = w.doWSPushMsg(*wsResp); err != nil {
+				log.Error(wsResp.OperationID, "doWSPushMsg failed ", err.Error())
+			}
 		}
-		if err = w.doWSPushMsg(*wsResp); err != nil {
-			log.Error(wsResp.OperationID, "doWSPushMsg failed ", err.Error())
-		}
-		//if err = w.doWSPushMsgForTest(*wsResp); err != nil {
-		//	log.Error(wsResp.OperationID, "doWSPushMsgForTest failed ", err.Error())
-		//}
-
 	case constant.WSSendMsg:
 		if err = w.doWSSendMsg(*wsResp); err != nil {
 			log.Error(wsResp.OperationID, "doWSSendMsg failed ", err.Error(), wsResp.ReqIdentifier, wsResp.MsgIncr)
@@ -359,9 +357,7 @@ func (w *Ws) doWSPushMsgForTest(wsResp GeneralWsResp) error {
 	if err != nil {
 		return utils.Wrap(err, "Unmarshal failed")
 	}
-	log.Debug(wsResp.OperationID, "recv push doWSPushMsgForTest")
-	return nil
-	//	return utils.Wrap(common.TriggerCmdPushMsg(sdk_struct.CmdPushMsgToMsgSync{Msg: &msg, OperationID: wsResp.OperationID}, w.pushMsgAndMaxSeqCh), "")
+	return utils.Wrap(common.TriggerCmdPushMsg(sdk_struct.CmdPushMsgToMsgSync{Msg: &msg, OperationID: wsResp.OperationID}, w.pushMsgAndMaxSeqCh), "")
 }
 
 func (w *Ws) kickOnline(msg GeneralWsResp) {

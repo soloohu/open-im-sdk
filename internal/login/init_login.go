@@ -41,6 +41,7 @@ type LoginMgr struct {
 	db           *db.DataBase
 	ws           *ws.Ws
 	msgSync      *ws.MsgSync
+	msgForward   *ws.MsgForward
 	heartbeat    *heartbeart.Heartbeat
 	push         *comm2.Push
 	cache        *cache.Cache
@@ -133,17 +134,21 @@ func (u *LoginMgr) SetConversationListener(conversationListener open_im_sdk_call
 func (u *LoginMgr) SetAdvancedMsgListener(advancedMsgListener open_im_sdk_callback.OnAdvancedMsgListener) {
 	if u.conversation != nil {
 		u.conversation.SetMsgListener(advancedMsgListener)
-	} else {
-		u.advancedMsgListener = advancedMsgListener
+	} 
+	if u.msgForward != nil {
+		u.msgForward.SetMsgListener(advancedMsgListener)
 	}
+	u.advancedMsgListener = advancedMsgListener
 }
 
 func (u *LoginMgr) SetBatchMsgListener(batchMsgListener open_im_sdk_callback.OnBatchMsgListener) {
 	if u.conversation != nil {
 		u.conversation.SetBatchMsgListener(batchMsgListener)
-	} else {
-		u.batchMsgListener = batchMsgListener
 	}
+	if u.msgForward != nil {
+		u.msgForward.SetBatchMsgListener(batchMsgListener)
+	}
+	u.batchMsgListener = batchMsgListener
 }
 func (u *LoginMgr) SetFriendListener(friendListener open_im_sdk_callback.OnFriendshipListener) {
 	if u.friend != nil {
@@ -225,10 +230,18 @@ func (u *LoginMgr) login(userID, token string, cb open_im_sdk_callback.Base, ope
 	if constant.OnlyForTest == 1 {
 		wsConn := ws.NewWsConn(u.connListener, u.token, u.loginUserID)
 		wsRespAsyn := ws.NewWsRespAsyn()
+		u.pushMsgAndMaxSeqCh = make(chan common.Cmd2Value, 1000)
 		u.ws = ws.NewWs(wsRespAsyn, wsConn, u.cmdWsCh, u.pushMsgAndMaxSeqCh, u.heartbeatCmdCh)
 		u.heartbeat = heartbeart.NewHeartbeat(u.msgSync, u.heartbeatCmdCh, u.connListener, u.token, u.id2MinSeq, u.full)
 		u.heartbeat.WsForTest = u.ws
 		u.heartbeat.LoginUserIDForTest = u.loginUserID
+		
+		u.msgForward = ws.NewMsgForward(u.ws, u.loginUserID, u.pushMsgAndMaxSeqCh)
+		if u.batchMsgListener != nil {
+			u.msgForward.SetBatchMsgListener(u.batchMsgListener)
+		}
+		go common.DoListener(u.msgForward)
+
 		cb.OnSuccess("")
 		return
 	}
