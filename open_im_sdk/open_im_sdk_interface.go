@@ -11,6 +11,7 @@ import (
 	"github.com/soloohu/open_im_sdk/pkg/log"
 	"github.com/soloohu/open_im_sdk/pkg/utils"
 	"github.com/soloohu/open_im_sdk/sdk_struct"
+	"github.com/soloohu/open_im_sdk/pkg/server_api_params"
 	"strings"
 )
 
@@ -803,6 +804,36 @@ func SendMessageNotOss(callback open_im_sdk_callback.SendMsgCallBack, operationI
 		return
 	}
 	userForSDK.Conversation().SendMessageNotOss(callback, message, recvID, groupID, offlinePushInfo, operationID)
+}
+func SendTextMessageOnly(text, senderID, recvID, groupID, operationID string) bool {
+	var wsMsgData server_api_params.MsgData
+	options := make(map[string]bool, 2)
+	wsMsgData.SendID = senderID
+	if groupID == "" {
+		wsMsgData.RecvID = recvID
+		wsMsgData.SessionType = constant.SingleChatType
+	} else {
+		wsMsgData.GroupID = groupID
+		wsMsgData.SessionType = constant.SuperGroupChatType
+	}
+
+	wsMsgData.ClientMsgID = utils.GetMsgID(senderID)
+	wsMsgData.SenderPlatformID = 1
+
+	wsMsgData.MsgFrom = constant.UserMsgType
+	wsMsgData.ContentType = constant.Text
+	wsMsgData.Content = []byte(text)
+	wsMsgData.CreateTime = utils.GetCurrentTimestampByMill()
+	wsMsgData.Options = options
+	wsMsgData.OfflinePushInfo = nil
+	timeout := 300
+	log.Info(operationID, "SendReqTest begin ", wsMsgData)
+	flag := userForSDK.Ws().SendReqTest(&wsMsgData, constant.WSSendMsg, timeout, senderID, operationID)
+
+	if flag != true {
+		log.Warn(operationID, "SendReqTest failed ", wsMsgData)
+	}
+	return flag
 }
 func FindMessageList(callback open_im_sdk_callback.Base, operationID string, findMessageOptions string) {
 	if err := CheckResourceLoad(userForSDK); err != nil {
