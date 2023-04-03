@@ -805,7 +805,7 @@ func SendMessageNotOss(callback open_im_sdk_callback.SendMsgCallBack, operationI
 	}
 	userForSDK.Conversation().SendMessageNotOss(callback, message, recvID, groupID, offlinePushInfo, operationID)
 }
-func SendTextMessageOnly(text, senderID, recvID, groupID, operationID string) bool {
+func SendTextMessageOnly(text, senderID, recvID, groupID, operationID, nickname, faceUrl string) bool {
 	var wsMsgData server_api_params.MsgData
 	options := make(map[string]bool, 2)
 	wsMsgData.SendID = senderID
@@ -817,6 +817,8 @@ func SendTextMessageOnly(text, senderID, recvID, groupID, operationID string) bo
 		wsMsgData.SessionType = constant.SuperGroupChatType
 	}
 
+	wsMsgData.SenderNickname = nickname
+	wsMsgData.SenderFaceURL = faceUrl
 	wsMsgData.ClientMsgID = utils.GetMsgID(senderID)
 	wsMsgData.SenderPlatformID = 1
 
