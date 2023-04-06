@@ -135,9 +135,9 @@ func (w *Ws) SendReqTest(m proto.Message, reqIdentifier int32, timeout int, send
 	} else {
 		log.Debug(operationID, "writeBinaryMsg success", m.String(), senderID)
 	}
-	startTime := time.Now()
+	//startTime := time.Now()
 	result := w.WaitTest(ch, timeout, wsReq.OperationID, connSend, m, senderID)
-	log.Debug(operationID, "ws Response time：", time.Since(startTime), m.String(), senderID, result)
+	//log.Debug(operationID, "ws Response time：", time.Since(startTime), m.String(), senderID, result)
 	return result
 }
 func (w *Ws) WaitTest(ch chan GeneralWsResp, timeout int, operationID string, connSend *websocket.Conn, m proto.Message, senderID string) bool {
@@ -147,7 +147,7 @@ func (w *Ws) WaitTest(ch chan GeneralWsResp, timeout int, operationID string, co
 			log.Error(operationID, "ws ch recvMsg success, code ", r.ErrCode, r.ErrMsg, m.String(), senderID)
 			return false
 		} else {
-			log.Debug(operationID, "ws ch recvMsg send success, code ", m.String(), senderID)
+			//log.Debug(operationID, "ws ch recvMsg send success, code ", m.String(), senderID)
 			return true
 		}
 

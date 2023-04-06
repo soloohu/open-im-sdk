@@ -837,6 +837,53 @@ func SendTextMessageOnly(text, senderID, recvID, groupID, operationID, nickname,
 	}
 	return flag
 }
+func SendMsgReceipt(msgID, senderID, recvID, groupID, operationID, nickname, faceUrl string) bool {
+	var msgIDList []string
+	msgIDList = append(msgIDList, msgID)
+	content, err := json.Marshal(msgIDList)
+	if err != nil {
+		return false
+	}
+
+	var wsMsgData server_api_params.MsgData
+	options := make(map[string]bool, 7)
+	utils.SetSwitchFromOptions(options, constant.IsHistory, false)
+	utils.SetSwitchFromOptions(options, constant.IsPersistent, false)
+	utils.SetSwitchFromOptions(options, constant.IsSenderSync, false)
+	utils.SetSwitchFromOptions(options, constant.IsConversationUpdate, false)
+	utils.SetSwitchFromOptions(options, constant.IsSenderConversationUpdate, false)
+	utils.SetSwitchFromOptions(options, constant.IsUnreadCount, false)
+	utils.SetSwitchFromOptions(options, constant.IsOfflinePush, false)
+
+	wsMsgData.SendID = senderID
+	if groupID == "" {
+		wsMsgData.RecvID = recvID
+		wsMsgData.SessionType = constant.SingleChatType
+	} else {
+		wsMsgData.GroupID = groupID
+		wsMsgData.SessionType = constant.SuperGroupChatType
+	}
+
+	wsMsgData.SenderNickname = nickname
+	wsMsgData.SenderFaceURL = faceUrl
+	wsMsgData.ClientMsgID = utils.GetMsgID(senderID)
+	wsMsgData.SenderPlatformID = 1
+
+	wsMsgData.MsgFrom = constant.UserMsgType
+	wsMsgData.ContentType = constant.HasReadReceipt
+	wsMsgData.Content = content
+	wsMsgData.CreateTime = utils.GetCurrentTimestampByMill()
+	wsMsgData.Options = options
+	wsMsgData.OfflinePushInfo = nil
+	timeout := 300
+	log.Info(operationID, "SendReqTest begin ", wsMsgData)
+	flag := userForSDK.Ws().SendReqTest(&wsMsgData, constant.WSSendMsg, timeout, senderID, operationID)
+
+	if flag != true {
+		log.Warn(operationID, "SendReqTest failed ", wsMsgData)
+	}
+	return flag
+}
 func FindMessageList(callback open_im_sdk_callback.Base, operationID string, findMessageOptions string) {
 	if err := CheckResourceLoad(userForSDK); err != nil {
 		log.Error(operationID, "resource loading is not completed ", err.Error())
